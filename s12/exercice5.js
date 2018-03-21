@@ -37,20 +37,16 @@ const qMarks = array.map (( { username } ) => `${username}?`);
 assert.deepEqual (qMarks, ['john?', 'becky?', 'susy?', 'tyson?']);
 //Filter the array to only include users who are on team: red
 const red = array.filter (user => user.team === 'red');
-/*assert.deepEqual (red, [
-    {
-        username: "susy",
-        team: "red",
-        score: 55,
-        items: ["ball", "eraser", "pen"]
-    },
-    {
-        username: "john",
-        team: "red",
-        score: 5,
-        items: ["ball", "book", "pen"]
-    }
-]);*/
+assert.deepEqual (red, [
+ { username: 'john',
+ team: 'red',
+ score: 5,
+ items: [ 'ball', 'book', 'pen' ] },
+ { username: 'susy',
+ team: 'red',
+ score: 55,
+ items: [ 'ball', 'eraser', 'pen' ] }
+]);
 
 //Find out the total score of all users using reduce
 const total = array.reduce((acc, {score}) => acc + score, 0);
