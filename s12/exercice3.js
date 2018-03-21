@@ -37,7 +37,7 @@ var message = `Hello ${firstName} have I met you before? I think we met in ${cit
 
 // default arguments
 // default age to 10;
-function isValidAge(age) {
+function isValidAge(age = 12) {
     return age
 }
 
