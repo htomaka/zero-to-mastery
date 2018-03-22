@@ -1,14 +1,19 @@
 const assert = require ('assert');
 
+function search(term){
+    return text => text.includes(term);
+}
+
 // Solve the below problems:
 // #1) Check if this array includes the name "John".
+const includesJohn = search('John');
 const dragons = ['Tim', 'Johnathan', 'Sandy', 'Sarah'];
-const hasJohn = dragons.some(dragon => dragon.includes('John'));
+const hasJohn = dragons.some(includesJohn);
 assert(hasJohn);
 
 // #2) Check if this array includes any name that has "John" inside of it. If it does, return that
 // name or names in an array.
-const match = dragons.filter(dragon => dragon.includes('John'));
+const match = dragons.filter(includesJohn);
 assert.deepEqual(match, ['Johnathan']);
 
 // #3) Create a function that calulates the power of 100 of a number entered as a parameter
